@@ -2,18 +2,17 @@ import { Button } from 'react-bootstrap'
 import usePosts from '../hooks/usePosts'
 import Loading from '../components/Loading'
 import PostCard from '../components/PostCard'
+import ErrorBox from '../components/ErrorBox'
 
-const PostList = () => {
+const PostsPage = () => {
   const { isLoading, isError, data: posts, error } = usePosts()
 
   if (isLoading) return <Loading />
-  if (isError)
-    return <div className="error">Something happend. {error.message}</div>
+  if (isError) return <ErrorBox message={error.message} />
   return (
     <div>
-      <h2>Post List</h2>
       {posts.map(post => (
-        <PostCard key={post.id} post={post} />
+        <PostCard key={post.id} post={post} className="post-row" />
       ))}
       <hr />
       <Button as="a" href="/post/add">
@@ -23,4 +22,4 @@ const PostList = () => {
   )
 }
 
-export default PostList
+export default PostsPage

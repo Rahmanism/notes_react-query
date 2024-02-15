@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, Route, Routes } from 'react-router-dom'
-import PostList from './pages/PostList'
-import Post from './pages/Post'
-import EditPost from './pages/EditPost'
+import PostPage from './pages/PostPage'
+import EditPostPage from './pages/EditPostPage'
 import { Row } from 'react-bootstrap'
-import AddPost from './pages/AddPost'
+import AddPostPage from './pages/AddPostPage'
+import PostsPage from './pages/PostsPage'
 
 function App() {
   return (
@@ -13,10 +13,10 @@ function App() {
         <h1 className="title">Awesome Blog</h1>
       </Row>
       <Routes>
-        <Route path="/" element={<PostList />} />
-        <Route path="/post/:id" element={<Post />} />
-        <Route path="/post/:id/edit" element={<EditPost />} />
-        <Route path="/post/add" element={<AddPost />} />
+        <Route path="/" element={<PostsPage />} />
+        <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/post/:id/edit" element={<EditPostPage />} />
+        <Route path="/post/add" element={<AddPostPage />} />
       </Routes>
       <footer>
         <Row>

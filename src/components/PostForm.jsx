@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
 const defaultPost = {
@@ -7,9 +7,15 @@ const defaultPost = {
 }
 
 const PostForm = ({ postToEdit }) => {
-  const [post, setPost] = useState(
-    postToEdit ? { ...postToEdit } : { ...defaultPost }
-  )
+  console.log('postToEdit', postToEdit)
+  const [post, setPost] = useState(postToEdit)
+
+  // useEffect(() => {
+  //   console.log('🤩🚘 postToEdit in useeffect', postToEdit)
+  //   setPost(postToEdit ? { ...postToEdit } : { ...defaultPost })
+  // }, [])
+
+  console.log('post in postform:', post)
 
   const handleChangeInput = e => {
     setPost(p => ({

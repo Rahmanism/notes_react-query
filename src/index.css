@@ -3,6 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
+  margin: .5rem;
+
   color: #213547;
   background-color: #ffffff;
 
@@ -12,6 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --light-background: #f9fdff;
+  --alt-backgrand: #f9f9f9;
   --border-color: #87ceeb;
   --big-border-radius: 15px;
   --normal-color: #333;
@@ -90,4 +93,8 @@ footer {
 
 .card-body .btn {
   margin-right: 0.5rem;
+}
+
+.post-row:nth-child(odd) {
+  background-color: var(--alt-backgrand);
 }

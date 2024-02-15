@@ -1,6 +1,6 @@
 import PostForm from '../components/PostForm'
 
-const AddPost = () => {
+const AddPostPage = () => {
   return (
     <div>
       <h2>Add Post</h2>
@@ -9,4 +9,4 @@ const AddPost = () => {
   )
 }
 
-export default AddPost
+export default AddPostPage

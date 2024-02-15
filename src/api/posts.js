@@ -14,7 +14,9 @@ export const fetchPosts = async () => {
  * @returns {Promise<Object>} A promise that resolves to the fetched post object.
  */
 export const fetchPost = async id => {
-  const postRaw = await fetch(`http://localhost:3000/posts/${id}`)
+  console.log('🤷🏻 id in fetchPost', id)
+  const postRaw = await fetch(`http://localhost:3000/posts?id=${id}`)
+  console.log('postRaw', postRaw)
   const post = await postRaw.json()
   return post
 }
