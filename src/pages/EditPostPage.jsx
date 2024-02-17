@@ -6,7 +6,6 @@ import ErrorBox from '../components/ErrorBox'
 
 const EditPostPage = () => {
   const { id } = useParams()
-  console.log('🚙 id in edit:', id)
   const { isLoading, isError, data: post, error } = usePost(id)
 
   if (isLoading) return <Loading />

@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "The systemd by example",
+      "id": "1",
+      "title": "The systemd by example!!!",
       "body": "systemd always has been a bit of a mystery to me. I knew that it is used for system initialization and for service management, but I didn’t really understand how it worked. Every time I tried to dig deeper, for example by looking at the setup of my machine or reading the docs, I was quickly overwhelmed. There are over 300 systemd units active on my system, and it’s not easy to know which ones are important and what they are used for. The man pages are comprehensive, but it is easy to get lost in details. Similarly for the resources online: there are a lot of them, but none of them really made it click for me. (Although the original announcement of systemd, Rethinking PID 1, cleared up quite a few things.)"
     },
     {
-      "id": 2,
-      "title": "How to copy a file between devices?",
-      "body": "Copying a file across devices is painful. You’re on your phone, but you want to access a file that’s on your laptop. How do you do it? What about the other way around? What about copying any file between any of your devices? I asked my dad how he copies a file from his phone to his computer, and he replied with: “through mail attachments, or I use WeTransfer if it’s too big.”. If you had asked me 5 years ago, I would’ve said: “through Dropbox”. Obviously, all fair solutions to this common problem, but I want to make it a little harder. Instead, I’ll be looking for the easiest and laziest way, to copy a file between devices. On top of that, I’ll add a couple of rules:\n\nI can’t use an account from an existing online service (like Dropbox, Google Drive, WeTransfer, email drafts, etc.).\nIt needs to be useable for a non-technical person\nIts flow has to be consistent across platforms"
+      "id": "2",
+      "title": "Today's Tip: How to copy a file between devices?",
+      "body": "Read carefully!\nCopying a file across devices is painful. You’re on your phone, but you want to access a file that’s on your laptop. How do you do it? What about the other way around? What about copying any file between any of your devices? I asked my dad how he copies a file from his phone to his computer, and he replied with: “through mail attachments, or I use WeTransfer if it’s too big.”. If you had asked me 5 years ago, I would’ve said: “through Dropbox”. Obviously, all fair solutions to this common problem, but I want to make it a little harder. Instead, I’ll be looking for the easiest and laziest way, to copy a file between devices. On top of that, I’ll add a couple of rules:\n\nI can’t use an account from an existing online service (like Dropbox, Google Drive, WeTransfer, email drafts, etc.).\nIt needs to be useable for a non-technical person\nIts flow has to be consistent across platforms"
+    },
+    {
+      "id": "1044",
+      "title": "sdf",
+      "body": "sdf"
     }
   ]
 }

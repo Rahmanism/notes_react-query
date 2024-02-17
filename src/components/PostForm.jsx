@@ -1,21 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { addPost, updatePost } from '../api/posts'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const defaultPost = {
+  id: 0,
   title: '',
   body: '',
 }
 
-const PostForm = ({ postToEdit }) => {
-  console.log('postToEdit', postToEdit)
+const PostForm = ({ postToEdit = defaultPost }) => {
   const [post, setPost] = useState(postToEdit)
-
-  // useEffect(() => {
-  //   console.log('🤩🚘 postToEdit in useeffect', postToEdit)
-  //   setPost(postToEdit ? { ...postToEdit } : { ...defaultPost })
-  // }, [])
-
-  console.log('post in postform:', post)
+  const navigate = useNavigate()
+  const queryClient = useQueryClient()
 
   const handleChangeInput = e => {
     setPost(p => ({
@@ -23,6 +22,22 @@ const PostForm = ({ postToEdit }) => {
       [e.target.name]: e.target.value,
     }))
   }
+
+  const mutation = useMutation({
+    mutationFn: () => {
+      if (post.id === 0) {
+        delete post.id
+        console.log('post without id ', post)
+        return addPost(post)
+      }
+      return updatePost(post)
+    },
+    onSuccess: () => {
+      toast('Saved!')
+      queryClient.invalidateQueries({ queryKey: ['posts'] })
+      navigate('/')
+    },
+  })
 
   const renderField = ({ label, multiline = false }) => (
     <Form.Group className="mb-3">
@@ -49,7 +64,7 @@ const PostForm = ({ postToEdit }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(post)
+    mutation.mutate(post)
   }
 
   return (

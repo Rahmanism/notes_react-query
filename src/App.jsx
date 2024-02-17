@@ -5,12 +5,16 @@ import EditPostPage from './pages/EditPostPage'
 import { Row } from 'react-bootstrap'
 import AddPostPage from './pages/AddPostPage'
 import PostsPage from './pages/PostsPage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
     <>
       <Row>
-        <h1 className="title">Awesome Blog</h1>
+        <Link to="/">
+          <h1 className="title">Awesome Blog</h1>
+        </Link>
       </Row>
       <Routes>
         <Route path="/" element={<PostsPage />} />
@@ -23,6 +27,7 @@ function App() {
           <Link to="/">Home</Link>
         </Row>
       </footer>
+      <ToastContainer />
     </>
   )
 }

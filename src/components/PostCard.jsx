@@ -1,7 +1,7 @@
 import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-function PostCard({ post, className }) {
+function PostCard({ post, className, deletePost }) {
   return (
     <Card className={`no-border ${className}`}>
       <Card.Body>
@@ -14,9 +14,15 @@ function PostCard({ post, className }) {
         <Button variant="info" size="sm" href={`/post/${post.id}/edit`}>
           Edit
         </Button>
-        <Button variant="danger" size="sm">
-          Delete
-        </Button>
+        {deletePost && (
+          <Button
+            variant="danger"
+            size="sm"
+            onClick={() => deletePost(post.id)}
+          >
+            Delete
+          </Button>
+        )}
       </Card.Body>
     </Card>
   )
