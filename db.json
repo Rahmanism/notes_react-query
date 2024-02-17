@@ -12,8 +12,8 @@
     },
     {
       "id": "1044",
-      "title": "sdf",
-      "body": "sdf"
+      "title": "Using NPM Install Behind A Corporate Proxy Server",
+      "body": "If you use a desktop or workstation set up by your workplace then you’ve probably been here. Trying to install an npm package (e.g npm install -g create-react-app )and getting this error"
     }
   ]
 }
